@@ -2,7 +2,7 @@
 
 Track your progress through your cybersecurity learning journey. Check off items as you complete them!
 
-**Started:** [2082-10-11]  
+**Started:** [2083-03-01]  
 **Target Completion:** [2085-10-01] _(revised: ~24 months at 3-5 hrs/week, was 15 months)_
 
 > **Note on pacing:** Original plan assumed higher weekly hours. At 3-5 hrs/week alongside BSc CSIT coursework, this is realistically a 22-24 month journey — and that's fine. Use semester breaks (Dashain, winter, post-board-exams) for intensive 10-15 hr/week pushes on HackTheBox/CTFs to catch up.
@@ -43,10 +43,10 @@ Track your progress through your cybersecurity learning journey. Check off items
 - [x] Master basic commands (ls, cd, pwd, mkdir, rm, cp, mv)
 - [x] Understand file permissions (chmod, chown)
 - [x] Learn user and group management
-- [ ] Practice process management (ps, top, kill) — _covered in OSI/cybersecurity notes session_
+- [x] Practice process management (ps, top, kill) — _covered in OSI/cybersecurity notes session_
 - [x] Learn package management (apt, yum, dnf) — _pacman/yay daily use transfers directly_
-- [ ] Write 5 basic bash scripts — _start with the log-scanning script idea_
-- [ ] Complete OverTheWire Bandit levels 1-10
+- [x] Write 5 basic bash scripts — _start with the log-scanning script idea_
+- [x] Complete OverTheWire Bandit levels 1-10
 - [ ] Complete OverTheWire Bandit levels 11-20
 - [ ] Complete OverTheWire Bandit levels 21-25
 - [x] Set up a Linux server (home lab or VM) — _Arch + systemd services (Ollama, etc.) counts_
