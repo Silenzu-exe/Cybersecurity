@@ -74,7 +74,7 @@ Track your progress through your cybersecurity learning journey. Check off items
 
 #### Core Concepts
 
-- [ ] Memorize OSI Model (7 layers) — _covered in detail incl. security threats per layer_
+- [x] Memorize OSI Model (7 layers) — _covered in detail incl. security threats per layer_
 - [ ] Understand TCP/IP Model (4 layers) — _covered incl. 3-way handshake & SYN flood_
 - [ ] Master IPv4 addressing
 - [ ] Practice subnetting (10 exercises)
