@@ -37,7 +37,7 @@ Track your progress through your cybersecurity learning journey. Check off items
 
 ### Linux Operating System (PRIORITY!) — _Mostly done via Arch daily-driving_
 
-[[1.Linux Commands Cheat Sheet]]
+[[1.1  Commands Cheat Sheet]]
 
 - [x] Install Ubuntu or Kali Linux (VM or dual boot) — _Arch is more advanced, counts as done_
 - [x] Master basic commands (ls, cd, pwd, mkdir, rm, cp, mv)

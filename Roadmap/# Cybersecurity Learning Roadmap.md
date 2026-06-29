@@ -33,7 +33,7 @@ A complete guide from beginner to advanced cybersecurity professional.
 ### 1.2 Operating Systems
 
 #### Linux (Priority!)
-[[1.Linux Commands Cheat Sheet]]
+[[1.1  Commands Cheat Sheet]]
 **Essential Skills:**
 - Command line navigation
 - File permissions and ownership
