@@ -1,0 +1,223 @@
+{
+  "main": {
+    "id": "444efae9dfd33abd",
+    "type": "split",
+    "children": [
+      {
+        "id": "e080364b31dd928a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ea010c0dbca97c92",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f0ed17903dd61e15",
+    "type": "split",
+    "children": [
+      {
+        "id": "20b4273f1b23bd5f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6c03c2dfb3f9e364",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "bc9c0c886999b94f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "3425b17415c9ef1e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ef9314abeccb57d5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "221e5cdbb78ba616",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 329.5
+  },
+  "right": {
+    "id": "6b6f90cfb8bbbdb0",
+    "type": "split",
+    "children": [
+      {
+        "id": "a288d79800d2506f",
+        "type": "tabs",
+        "dimension": 68.46758349705304,
+        "children": [
+          {
+            "id": "d38e4043b877aa84",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "3af88f13c81a6b45",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "291da88ef4293da6",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "ee404b6a0a11cdd1",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "4c0c348dd6667aba",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ],
+        "currentTab": 2
+      },
+      {
+        "id": "ad3cb18113d3af4a",
+        "type": "tabs",
+        "dimension": 31.53241650294695,
+        "children": [
+          {
+            "id": "13cefbf71d315505",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 307.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "graph:Open graph view": false
+    }
+  },
+  "active": "221e5cdbb78ba616",
+  "lastOpenFiles": [
+    "Note files/Linux/1.1  Commands Cheat Sheet.md",
+    "2026-06-29.md",
+    "Untitled 1.base",
+    "Untitled.base",
+    "Untitled 2.base",
+    "Note files/Linux/1.2 Networking commands.md",
+    "Books/Hacking the art of exploitation, 2nd ed. (original PDF) (Jon Erickson) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
+  ]
+}
