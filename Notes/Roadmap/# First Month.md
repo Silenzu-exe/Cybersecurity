@@ -10,7 +10,7 @@
 - [x] Day 2: Learn basic Linux commands
 - [x] Day 3: Practice file permissions
 - [x] Day 4: Study OSI model — _done, with security threat mapping per layer_
-- [ ] Day 5: Study TCP/IP model — _done, incl. 3-way handshake & SYN flood_
+- [x] Day 5: Study TCP/IP model — _done, incl. 3-way handshake & SYN flood_
 - [ ] Day 6: Install and use Wireshark
 - [ ] Day 7: Practice packet analysis
 

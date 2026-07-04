@@ -11,7 +11,7 @@
 **Goals:**
 
 - [ ] Wireshark + packet analysis practice
-- [ ] OverTheWire Bandit levels 1-10
+- [x] OverTheWire Bandit levels 1-10
 - [ ] Python basics (variables, loops, functions)
 - [ ] Complete 3-5 TryHackMe rooms
 
@@ -38,7 +38,7 @@
 **Focus:** Networking depth + InfoSec basics  
 **Goals:**
 
-- [ ] IPv4 subnetting practice (10 exercises)
+- [x] IPv4 subnetting practice (10 exercises)
 - [ ] CIA Triad, auth vs authz, access control models
 - [ ] OverTheWire Bandit levels 21-25
 - [ ] Complete 5 more TryHackMe rooms (13-15 total)
