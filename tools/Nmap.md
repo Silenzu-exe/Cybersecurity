@@ -1,53 +1,8 @@
-
->[!note] This file contains the syntax and information about the tools used in `LabEX` and other `E-learning platform`.
-## Hydra:
-
-**Hydra** is an open source password brute-forcing tool designed for **online brute-
-force attacks** against network protocols. Hydra can perform rapid dictionary attacks against more than 50 protocols including telnet, FTP, HTTP, HTTPS, SMB, databases, and several other services.
-
-```bash
-hydra -l securityadmin -P passwords.txt localhost -s 8080 http-post-form "/:username=^USER^&password=^PASS^:invalid username or password" -o hydra_result.txt
-
-# -l single username
-# -L Username file
-# -p single password
-# -P password file
-# -s specify port
-# http-post-form : attacking web login forms using HTTP POST method with placeholders ^USER^ and ^PASS^.
-# -o store output
-```
-
-## OpenSSL: 
-
-
-To encrypt our file, we'll use this OpenSSL command:
-
-```bash
-openssl enc -aes-256-cbc -salt -in secret.txt -out secret.enc -pbkdf2
-```
-
-Here's what each part does:
-
-	openssl enc: Invokes OpenSSL's encryption function
-    -aes-256-cbc: Specifies our chosen encryption method
-    -salt: Adds random data to prevent identical messages from looking the same when encrypted
-    -in secret.txt: Names our input file containing the original message
-    -out secret.enc: Specifies where to save the encrypted output
-    -pbkdf2: Uses Password-Based Key Derivation Function 2 to securely generate encryption keys from passwords
-    
-```
-```
-To decrypt our encrypted file we use, 
-
-```bash
-openssl enc -aes-256-cbc -d -in secret.enc -out decrypted.txt -pbkdf2
-```
-
 ## Nmap: 
 
 **TCP connect scan:**
 ```bash
-namp -sT -p 8000 localhost
+nmap -sT -p 8000 localhost
 ```
 -  -sT is an option that specifies a TCP connect scan. This tells Nmap to use the TCP connect method to check the status of the ports.
 - -p 8000 indicates that we want Nmap to scan only port 8000. You can change this number to scan other ports if needed.
@@ -55,7 +10,7 @@ namp -sT -p 8000 localhost
 
 **More detail scanning: **
 ```bash
-namp -sV -p 8000 localhost
+nmap -sV -p 8000 localhost
 ```
 - The `-sV` option is used to tell Nmap to probe open ports to determine service/version information. This means Nmap will try to figure out what specific software and version is running on the open port.
 
@@ -79,7 +34,7 @@ nmap -p 1-1000 localhost
 
 1. Normal format
 ```bash
-namp -oN normal.txt localhost 
+nmap -oN normal.txt localhost 
 ```
 - In this command, the `-oN` option is used to instruct Nmap to save the output in normal format. The `normal_output.txt` is the name of the file where the results will be stored. The `localhost` is the target we are scanning, which refers to the local machine itself.
 
