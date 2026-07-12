@@ -75,7 +75,7 @@ A complete guide from beginner to advanced cybersecurity professional.
 
 ### 1.3 Networking Fundamentals (CRITICAL!)
 **What to Learn:**
-[[1. Networking]]
+[[0.1. Networking]]
 **Core Concepts:**
 - OSI Model (7 layers)
 - TCP/IP Model (4 layers)

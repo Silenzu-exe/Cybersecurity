@@ -1,12 +1,15 @@
+thisdict = {
+    "name" : "Sandesh",
+    "address" : "ktm"
+}
 
 
-x = "Hello"
+x = thisdict.keys()
+print(x)
 
-def myfun():
-    global y
-    y = "name"
-    print(x + " World " + y)
-    
-myfun()
+y = thisdict.values()
+print(y)
 
-print(x + " " + y)
+
+z = thisdict.items()
+print(z)
