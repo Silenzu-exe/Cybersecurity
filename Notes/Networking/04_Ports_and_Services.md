@@ -3,6 +3,7 @@ tags: [networking, cybersecurity, ports, services, cheatsheet]
 ---
 
 # 04 — Ports & Services
+A port is a logical identifier used to distinguish different applications or services on a device, allowing network traffic to reach the correct program.
 
 ---
 
@@ -18,45 +19,45 @@ tags: [networking, cybersecurity, ports, services, cheatsheet]
 
 ## Must-Know Ports (Cybersecurity)
 
-| Port | Protocol | Service | Notes |
-|---|---|---|---|
-| 20 | TCP | FTP Data | Plaintext file transfer — sniff credentials |
-| 21 | TCP | FTP Control | Login in plaintext — brute force, anon login |
-| 22 | TCP | SSH | Encrypted remote shell — brute force if weak password |
-| 23 | TCP | Telnet | Fully plaintext SSH predecessor — almost never used but still found |
-| 25 | TCP | SMTP | Mail sending — open relay = email spoofing |
-| 53 | TCP/UDP | DNS | Zone transfer, DNS enum, DNS poisoning |
-| 67/68 | UDP | DHCP | Rogue DHCP server attack |
-| 69 | UDP | TFTP | Trivial FTP — no auth at all |
-| 80 | TCP | HTTP | Web — SQLi, XSS, directory traversal |
-| 110 | TCP | POP3 | Email retrieval — plaintext creds |
-| 111 | TCP/UDP | RPCBind | NFS enumeration starting point |
-| 119 | TCP | NNTP | News protocol — rarely used, sometimes forgotten/exposed |
-| 135 | TCP | MS-RPC | Windows RPC — many exploits target this |
-| 137-139 | TCP/UDP | NetBIOS | Windows name resolution, file sharing |
-| 143 | TCP | IMAP | Email sync — plaintext creds on port 143 |
-| 161/162 | UDP | SNMP | Device management — default community strings |
-| 389 | TCP | LDAP | Directory service — user enumeration |
-| 443 | TCP | HTTPS | Encrypted HTTP — still vulnerable to app-layer attacks |
-| 445 | TCP | SMB | Windows file share — EternalBlue, null sessions |
-| 465 | TCP | SMTPS | SMTP over SSL |
-| 500 | UDP | IKE/IPSec | VPN — fingerprinting |
-| 512-514 | TCP | RSH/Rlogin | Ancient remote shell — no auth sometimes |
-| 587 | TCP | SMTP (submission) | Mail with auth — brute force |
-| 631 | TCP | IPP (CUPS) | Printer — sometimes exposes info |
-| 993 | TCP | IMAPS | IMAP over SSL |
-| 995 | TCP | POP3S | POP3 over SSL |
-| 1433 | TCP | MSSQL | Microsoft SQL Server — SA default creds |
-| 1521 | TCP | Oracle DB | Oracle database |
-| 2049 | TCP | NFS | Network file share — often misconfigured permissions |
-| 3306 | TCP | MySQL | Database — brute force, SQL injection pivot |
-| 3389 | TCP | RDP | Windows Remote Desktop — brute force, BlueKeep |
-| 5432 | TCP | PostgreSQL | Database |
-| 5900 | TCP | VNC | Remote desktop — often weak/no auth |
-| 6379 | TCP | Redis | No auth by default in older versions — RCE possible |
-| 8080 | TCP | HTTP Alt | Dev servers, proxy, Tomcat admin |
-| 8443 | TCP | HTTPS Alt | Alternative HTTPS |
-| 27017 | TCP | MongoDB | No auth by default in older versions |
+| Port    | Protocol | Service           | Notes                                                               |
+| ------- | -------- | ----------------- | ------------------------------------------------------------------- |
+| 20      | TCP      | FTP Data          | Plaintext file transfer — sniff credentials                         |
+| 21      | TCP      | FTP Control       | Login in plaintext — brute force, anon login                        |
+| 22      | TCP      | SSH               | Encrypted remote shell — brute force if weak password               |
+| 23      | TCP      | Telnet            | Fully plaintext SSH predecessor — almost never used but still found |
+| 25      | TCP      | SMTP              | Mail sending — open relay = email spoofing                          |
+| 53      | TCP/UDP  | DNS               | Zone transfer, DNS enum, DNS poisoning                              |
+| 67/68   | UDP      | DHCP              | Rogue DHCP server attack                                            |
+| 69      | UDP      | TFTP              | Trivial FTP — no auth at all                                        |
+| 80      | TCP      | HTTP              | Web — SQLi, XSS, directory traversal                                |
+| 110     | TCP      | POP3              | Email retrieval — plaintext creds                                   |
+| 111     | TCP/UDP  | RPCBind           | NFS enumeration starting point                                      |
+| 119     | TCP      | NNTP              | News protocol — rarely used, sometimes forgotten/exposed            |
+| 135     | TCP      | MS-RPC            | Windows RPC — many exploits target this                             |
+| 137-139 | TCP/UDP  | NetBIOS           | Windows name resolution, file sharing                               |
+| 143     | TCP      | IMAP              | Email sync — plaintext creds on port 143                            |
+| 161/162 | UDP      | SNMP              | Device management — default community strings                       |
+| 389     | TCP      | LDAP              | Directory service — user enumeration                                |
+| 443     | TCP      | HTTPS             | Encrypted HTTP — still vulnerable to app-layer attacks              |
+| 445     | TCP      | SMB               | Windows file share — EternalBlue, null sessions                     |
+| 465     | TCP      | SMTPS             | SMTP over SSL                                                       |
+| 500     | UDP      | IKE/IPSec         | VPN — fingerprinting                                                |
+| 512-514 | TCP      | RSH/Rlogin        | Ancient remote shell — no auth sometimes                            |
+| 587     | TCP      | SMTP (submission) | Mail with auth — brute force                                        |
+| 631     | TCP      | IPP (CUPS)        | Printer — sometimes exposes info                                    |
+| 993     | TCP      | IMAPS             | IMAP over SSL                                                       |
+| 995     | TCP      | POP3S             | POP3 over SSL                                                       |
+| 1433    | TCP      | MSSQL             | Microsoft SQL Server — SA default creds                             |
+| 1521    | TCP      | Oracle DB         | Oracle database                                                     |
+| 2049    | TCP      | NFS               | Network file share — often misconfigured permissions                |
+| 3306    | TCP      | MySQL             | Database — brute force, SQL injection pivot                         |
+| 3389    | TCP      | RDP               | Windows Remote Desktop — brute force, BlueKeep                      |
+| 5432    | TCP      | PostgreSQL        | Database                                                            |
+| 5900    | TCP      | VNC               | Remote desktop — often weak/no auth                                 |
+| 6379    | TCP      | Redis             | No auth by default in older versions — RCE possible                 |
+| 8080    | TCP      | HTTP Alt          | Dev servers, proxy, Tomcat admin                                    |
+| 8443    | TCP      | HTTPS Alt         | Alternative HTTPS                                                   |
+| 27017   | TCP      | MongoDB           | No auth by default in older versions                                |
 
 ---
 
