@@ -17,8 +17,8 @@
 ### Week 2: Programming & Web
 
 - [x] Day 8: Python basics - variables, data types
-- [ ] Day 9: Python - functions and loops
-- [ ] Day 10: Python - write first script
+- [x] Day 9: Python - functions and loops
+- [x] Day 10: Python - write first script
 - [ ] Day 11: How HTTP works
 - [x] Day 12: Understand cookies and sessions
 - [ ] Day 13: Learn about OWASP Top 10

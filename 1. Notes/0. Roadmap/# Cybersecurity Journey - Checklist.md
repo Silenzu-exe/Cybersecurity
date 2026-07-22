@@ -88,8 +88,8 @@ Track your progress through your cybersecurity learning journey. Check off items
 
 #### Protocols
 
-- [ ] Understand TCP vs UDP
-- [ ] Know HTTP/HTTPS
+- [x] Understand TCP vs UDP
+- [x] Know HTTP/HTTPS
 - [ ] Know FTP/SFTP
 - [ ] Know SSH
 - [ ] Know SMTP, POP3, IMAP
@@ -100,10 +100,10 @@ Track your progress through your cybersecurity learning journey. Check off items
 
 - [ ] Install and use Wireshark
 - [ ] Capture and analyze 5 different packet types
-- [ ] Learn nmap basics
-- [ ] Scan your own network with nmap
-- [ ] Use netcat for network testing
-- [ ] Practice with ping, traceroute, netstat
+- [x] Learn nmap basics
+- [x] Scan your own network with nmap
+- [x] Use netcat for network testing
+- [x] Practice with ping, traceroute, netstat
 - [ ] Set up home network with proper segmentation
 - [ ] Configure basic firewall rules
 
@@ -121,14 +121,14 @@ Track your progress through your cybersecurity learning journey. Check off items
 #### Python (PRIORITY!)
 
 - [x] Learn Python basics (syntax, variables, data types)
-- [ ] Understand functions and modules
-- [ ] Practice file operations
+- [x] Understand functions and modules
+- [x] Practice file operations
 - [ ] Learn to work with APIs
 - [ ] Master regular expressions
 - [ ] Learn requests library
-- [ ] Learn socket library
+- [x] Learn socket library
 - [ ] Learn scapy library
-- [ ] Write a port scanner
+- [x] Write a port scanner
 - [ ] Write a password generator
 - [ ] Write a network tool (ping sweep, banner grabber, etc.)
 - [ ] Complete 10 Python automation tasks
