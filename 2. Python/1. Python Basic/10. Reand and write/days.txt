@@ -2,3 +2,6 @@
  monday
  tuesday
  wednesday
+ tuesday
+ wednesday
+ sunday

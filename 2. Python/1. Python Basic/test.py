@@ -1,15 +1,10 @@
-import socket
+import argparse
+import subprocess
 
-HOST = "www.google.com"
-PORT = 80
+parser = argparse.ArgumentParser(description="Run a shell command")
+parser.add_argument("-e", "--execute", help="command to execute")
+args = parser.parse_args()
 
-client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-client.connect((HOST, PORT))
-
-client.send(b"GET / HTTP/1.1\r\nHost: google.com\r\n\r\n")
-
-respond = client.recv(4096)
-
-print(respond.decode())
-client.close()
+if args.execute:
+    output = subprocess.check_output(args.execute, shell=True, stderr=subprocess.STDOUT)
+    print(output.decode())
