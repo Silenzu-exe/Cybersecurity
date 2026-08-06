@@ -12,8 +12,8 @@
 
 - [ ] Wireshark + packet analysis practice
 - [x] OverTheWire Bandit levels 1-10
-- [ ] Python basics (variables, loops, functions)
-- [ ] Complete 3-5 TryHackMe rooms
+- [x] Python basics (variables, loops, functions)
+- [x] Complete 3-5 TryHackMe rooms
 
 **Completed:** _**/**_/___
 
@@ -25,9 +25,9 @@
 **Goals:**
 
 - [ ] OverTheWire Bandit levels 11-20
-- [ ] Write first Python security script (port scanner)
-- [ ] SQL basics (for PhishGuard + SQLi prep)
-- [ ] Complete 5 more TryHackMe rooms (8-10 total)
+- [x] Write first Python security script (port scanner)
+- [x] SQL basics (for PhishGuard + SQLi prep)
+- [x] Complete 5 more TryHackMe rooms (8-10 total)
 
 **Completed:** _**/**_/___
 
