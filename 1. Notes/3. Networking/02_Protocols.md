@@ -198,3 +198,4 @@ Windows remote desktop.
 > - Brute-force target (common + credentials often weak)
 > - **BlueKeep (CVE-2019-0708)** — critical pre-auth RCE in older RDP implementations
 > - Exposed RDP on the internet = one of the top ransomware entry points in real incidents
+
