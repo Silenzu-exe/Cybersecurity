@@ -1,8 +1,20 @@
 ---
-tags: [networking, cybersecurity, ip, subnetting, cheatsheet]
+tags: [networking, cybersecurity, ip, mac, subnetting, cheatsheet]
 ---
 
-# 03 — IP Addressing & Subnetting
+# 02 — IP Addressing, MAC Addresses & Subnetting
+
+---
+
+## IP Addresses — Why They Matter for Security
+
+An IP address is a unique numerical label assigned to every device on a network. From a cybersecurity standpoint, IP addresses are the primary way attackers locate, target, and track devices. Knowing your IP address topology is fundamental to understanding your attack surface.
+
+**Key security notes:**
+- IP addresses can be spoofed (IP spoofing) to forge the source of a packet
+- Public IPs are exposed to the internet; private IPs sit behind NAT
+- Attackers use tools like `nmap` to scan IP ranges and discover open services
+- Logging IPs is essential for forensics and incident response
 
 ---
 
@@ -11,6 +23,32 @@ tags: [networking, cybersecurity, ip, subnetting, cheatsheet]
 - 32-bit address written as 4 octets: `192.168.1.100`
 - Each octet = 8 bits, range 0–255
 - Two parts: **Network** portion + **Host** portion (split determined by subnet mask)
+
+## IPv4 vs IPv6
+
+| | IPv4 | IPv6 |
+|---|---|---|
+| Address space | ~4.2 billion | 340 undecillion |
+| Header complexity | Simple | More complex |
+| NAT required? | Yes (hides devices) | No (every device gets a public IP) |
+| Attack surface | Smaller per device | Larger — every device directly reachable |
+| Weakness | IP spoofing, scanning | IPv6 misconfiguration, rogue RAs |
+
+### IPv6 Basics
+
+128-bit address written as 8 groups of 4 hex digits:
+`2001:0db8:85a3:0000:0000:8a2e:0370:7334`
+
+Shorthand rules:
+- Leading zeros in a group can be dropped: `0db8` → `db8`
+- One consecutive group of all zeros can be replaced with `::`: `2001:db8::1`
+
+| Type | Example | Equivalent to IPv4 |
+|---|---|---|
+| Loopback | `::1` | 127.0.0.1 |
+| Link-local | `fe80::/10` | 169.254.x.x |
+| Global unicast | `2000::/3` | Public IP |
+| Multicast | `ff00::/8` | 224.x.x.x |
 
 ---
 
@@ -102,25 +140,23 @@ Given `192.168.1.0/24`:
 
 ---
 
-## IPv6 Basics
+## MAC Addresses
 
-128-bit address written as 8 groups of 4 hex digits:
-`2001:0db8:85a3:0000:0000:8a2e:0370:7334`
+A MAC (Media Access Control) address is a 48-bit hardware identifier burned into a network interface card (NIC). Format: `AA:BB:CC:DD:EE:FF`. The first 3 bytes identify the manufacturer (OUI), the last 3 are unique to the device.
 
-Shorthand rules:
-- Leading zeros in a group can be dropped: `0db8` → `db8`
-- One consecutive group of all zeros can be replaced with `::`: `2001:db8::1`
-
-| Type | Example | Equivalent to IPv4 |
-|---|---|---|
-| Loopback | `::1` | 127.0.0.1 |
-| Link-local | `fe80::/10` | 169.254.x.x |
-| Global unicast | `2000::/3` | Public IP |
-| Multicast | `ff00::/8` | 224.x.x.x |
+**Security implications:**
+- MAC addresses only travel within a local network segment — routers strip them
+- **MAC spoofing:** attackers change their MAC to bypass MAC filtering on Wi-Fi or switches
+- **ARP poisoning:** an attacker links their MAC to another device's IP, intercepting traffic (man-in-the-middle) — see [[05_Core_Protocols]] and [[09_Network_Attacks]]
+- MAC addresses appear in Wi-Fi probe requests — used to track people's physical location
+- Modern OSes (iOS, Android, Windows 11) now randomize MACs for privacy
 
 ---
 
-## Security Relevance
+## Subnetting — Why It Matters for Security
+
+- Subnetting divides a large IP network into smaller logical networks (subnets), improving performance, security, and manageability.
+- Typical benefits: each department/zone gets its own subnet, inter-subnet traffic is routed through a router, and broadcast traffic stays contained to each subnet.
 
 > [!warning] Why subnetting matters for security
 > - **Scanning scope:** `nmap 192.168.1.0/24` — knowing the subnet tells you exactly what range to scan

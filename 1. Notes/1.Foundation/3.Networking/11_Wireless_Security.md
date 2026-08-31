@@ -2,7 +2,7 @@
 tags: [networking, cybersecurity, wireless, wifi, cheatsheet]
 ---
 
-# 09 — Wireless Security
+# 11 — Wireless Security
 
 > [!note] Termux limitation
 > Most WiFi attacks (monitor mode, packet injection) require a USB WiFi adapter that supports monitor mode + a compatible kernel driver. Android's built-in WiFi stack blocks this. The commands here are for a Linux machine with a compatible adapter — not Termux on your phone. The concepts apply everywhere.

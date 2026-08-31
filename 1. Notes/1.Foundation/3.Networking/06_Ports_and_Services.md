@@ -2,7 +2,7 @@
 tags: [networking, cybersecurity, ports, services, cheatsheet]
 ---
 
-# 04 — Ports & Services
+# 06 — Ports & Services
 A port is a logical identifier used to distinguish different applications or services on a device, allowing network traffic to reach the correct program.
 
 ---
@@ -102,4 +102,4 @@ nmap -sV -p 80,443 target           # service version detection
 nmap --open target                   # only show open ports (cleaner output)
 ```
 
-→ Full Nmap reference in [[05_Nmap_and_Recon]]
+→ Full Nmap reference in [[07_Nmap_and_Recon]]

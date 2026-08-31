@@ -2,7 +2,7 @@
 tags: [networking, cybersecurity, nmap, recon, cheatsheet]
 ---
 
-# 05 — Nmap & Recon
+# 07 — Nmap & Recon
 
 ---
 

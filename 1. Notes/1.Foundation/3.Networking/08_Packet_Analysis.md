@@ -2,7 +2,7 @@
 tags: [networking, cybersecurity, wireshark, tcpdump, packets, cheatsheet]
 ---
 
-# 06 — Packet Analysis (Wireshark & tcpdump)
+# 08 — Packet Analysis (Wireshark & tcpdump)
 
 ---
 

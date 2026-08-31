@@ -2,7 +2,7 @@
 tags: [networking, cybersecurity, firewall, ids, ips, cheatsheet]
 ---
 
-# 08 — Firewalls, IDS & IPS
+# 10 — Firewalls, IDS & IPS
 
 ---
 

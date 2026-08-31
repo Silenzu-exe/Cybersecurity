@@ -2,7 +2,7 @@
 tags: [networking, cybersecurity, attacks, cheatsheet]
 ---
 
-# 07 — Network Attacks
+# 09 — Network Attacks
 
 > [!warning] All of the below is for understanding, defense, and authorized testing only. Know the attacks so you can detect, prevent, and defend against them.
 
@@ -38,7 +38,7 @@ MITM:      Alice ←—→ Attacker ←—→ Bob
 
 ## ARP Spoofing / ARP Poisoning
 
-**What:** Attacker sends fake ARP replies to associate their MAC with another device's IP, redirecting traffic through themselves.
+**What:** Attacker sends fake ARP replies to associate their MAC with another device's IP, redirecting traffic through themselves. See [[05_Core_Protocols]] for how normal ARP works.
 
 ```
 Target thinks: 192.168.1.1 (gateway) → Attacker's MAC
@@ -61,7 +61,7 @@ ip neigh               # Linux alternative
 
 ## DNS Spoofing / DNS Cache Poisoning
 
-**What:** Attacker injects false DNS records, so when a victim looks up `bank.com`, they get the attacker's IP instead of the real one.
+**What:** Attacker injects false DNS records, so when a victim looks up `bank.com`, they get the attacker's IP instead of the real one. See [[03_DNS]] for normal resolution flow.
 
 ```
 Victim:   "What's the IP for bank.com?"

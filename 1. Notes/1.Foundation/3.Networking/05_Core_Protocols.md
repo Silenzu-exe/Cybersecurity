@@ -2,76 +2,12 @@
 tags: [networking, cybersecurity, protocols, cheatsheet]
 ---
 
-# 02 — Protocols
+# 05 — Core Protocols
 
----
+A protocol is a set of rules for formatting and processing data — a common language that lets very different devices communicate with each other regardless of their underlying software/hardware.
 
-In networking, a protocol is a set of rules for formatting and processing data. Network protocols are like a common language for computers. The computers within a network may use vastly different software and hardware; however, the use of protocols enables them to communicate with each other regardless.
-
-## HTTP / HTTPS
-
-| | HTTP | HTTPS |
-|---|---|---|
-| Port | 80 | 443 |
-| Encryption | None (plaintext) | TLS/SSL |
-| Intercept risk | High — anyone on network can read it | Encrypted in transit |
-
-**Key HTTP Methods:**
-
-| Method | Purpose | Security note |
-|---|---|---|
-| `GET` | Retrieve resource | Params in URL — logged everywhere |
-| `POST` | Send data | Body is hidden from URL, but not encrypted without HTTPS |
-| `PUT` | Upload/replace resource | Often abused if server misconfigured |
-| `DELETE` | Delete resource | Should require auth — often doesn't |
-| `OPTIONS` | What methods are allowed | Can reveal attack surface |
-| `PATCH` | Partial update | |
-
-**HTTP Status Codes (quick reference):**
-
-| Code | Meaning | Security relevance |
-|---|---|---|
-| 200 | OK | Normal response |
-| 301/302 | Redirect | Can be hijacked |
-| 400 | Bad request | Input parsing error |
-| 401 | Unauthorized | Auth required |
-| 403 | Forbidden | You're blocked, but the resource exists |
-| 404 | Not found | |
-| 500 | Server error | Can leak stack traces / version info |
-| 503 | Service unavailable | May indicate DoS |
-
----
-
-## DNS (Domain Name System) — Port 53 (UDP/TCP)
-
-**What it does:** Translates domain names → IP addresses.
-
-**Record types:**
-
-| Record | Purpose | Example |
-|---|---|---|
-| `A` | Domain → IPv4 | `google.com → 142.250.x.x` |
-| `AAAA` | Domain → IPv6 | |
-| `CNAME` | Alias for another domain | `www → example.com` |
-| `MX` | Mail server | `@example.com → mail.example.com` |
-| `TXT` | Arbitrary text (SPF, DKIM, verification) | |
-| `NS` | Nameservers for a domain | |
-| `PTR` | Reverse DNS — IP → domain | |
-
-**Commands:**
-```bash
-dig domain.com               # full DNS query
-dig domain.com MX             # specific record type
-dig @8.8.8.8 domain.com       # query a specific DNS server
-nslookup domain.com             # simpler alternative
-host domain.com                  # quick lookup
-```
-
-> [!note] Security relevance
-> - **DNS enumeration** reveals subdomains, mail servers, internal names → recon goldmine
-> - **DNS poisoning/spoofing**: attacker gives false A records → user goes to wrong IP
-> - DNS is often **unencrypted (UDP)** — interceptable on the wire
-> - **Zone transfer** (`dig axfr @ns.target.com target.com`) can dump the entire DNS zone if misconfigured
+> [!note] HTTP/HTTPS and DNS have their own dedicated files
+> See [[04_HTTP_and_HTTPS]] and [[03_DNS]] for those two — this file covers everything else.
 
 ---
 
@@ -116,6 +52,20 @@ cat ~/.ssh/authorized_keys               # view allowed keys on a server
 
 ---
 
+## Telnet (Teletype Network) — Port 23
+
+A protocol for remote terminal connection. The `telnet` client lets you connect to and issue text commands to any server listening on a TCP port — originally for remote administration, but useful generally for **banner grabbing** against any TCP service.
+
+```bash
+telnet target 25       # connect to SMTP, read the banner
+telnet target 80        # manually issue an HTTP request
+```
+
+> [!warning] Security issue
+> Fully plaintext — including any credentials typed during a session. Superseded by SSH for remote administration, but still occasionally found exposed.
+
+---
+
 ## SMTP / Email Protocols
 
 | Protocol | Port | Purpose | Encrypted version |
@@ -126,14 +76,19 @@ cat ~/.ssh/authorized_keys               # view allowed keys on a server
 
 > [!note] Security relevance
 > - SMTP on port 25 is often open on servers and can be used for **user enumeration** (`VRFY username`)
-> - **Email spoofing** abuses open relays — check SPF, DKIM, DMARC records via TXT DNS
+> - **Email spoofing** abuses open relays — check SPF, DKIM, DMARC records via TXT DNS records ([[03_DNS]])
 
 ---
 
 ## ARP (Address Resolution Protocol)
 
-**What it does:** Maps IP addresses → MAC addresses on a local network.
-**Operates at:** Layer 2 (no authentication — anyone can reply).
+**What it does:** Maps IP addresses → MAC addresses on the local network so devices can find each other's physical/hardware identifier. Operates at Layer 2 — **zero authentication**, anyone can reply.
+
+**How it works:**
+1. Every device keeps an **ARP cache** — a log of known IP → MAC mappings.
+2. To find a device, a computer broadcasts an **ARP Request**: "Who has this IP address?"
+3. Only the device that owns that IP responds with an **ARP Reply** containing its MAC address.
+4. The requester stores this mapping in its ARP cache for future use.
 
 ```
 Who has 192.168.1.1?  → ARP Request (broadcast)
@@ -141,7 +96,29 @@ I do! My MAC is XX:XX  → ARP Reply
 ```
 
 > [!warning] Security relevance
-> ARP has **zero authentication** — this is the root cause of **ARP spoofing/poisoning**, where an attacker replies to ARP requests with their own MAC address to intercept traffic (MITM).
+> ARP's lack of authentication is the root cause of **ARP spoofing/poisoning**, where an attacker replies to ARP requests with their own MAC to intercept traffic (MITM) — full attack details in [[09_Network_Attacks]].
+
+---
+
+## DHCP (Dynamic Host Configuration Protocol)
+
+**What it does:** Automatically assigns IP addresses to devices joining a network (the alternative is manually configuring each device).
+
+**The 4-step handshake (DORA):**
+1. **Discover** — device broadcasts looking for any DHCP server on the network.
+2. **Offer** — a DHCP server replies with an available IP address.
+3. **Request** — the device replies confirming it wants that offered IP.
+4. **Acknowledge (ACK)** — the DHCP server confirms, and the device can start using the IP.
+
+```
+Client → Discover → (broadcast)
+Server → Offer     → Client
+Client → Request   → Server
+Server → ACK       → Client
+```
+
+> [!warning] Security relevance
+> A **rogue DHCP server** can hand out malicious configuration (e.g. a fake gateway or DNS server), redirecting a victim's traffic through an attacker-controlled path.
 
 ---
 
@@ -156,7 +133,7 @@ traceroute host       # ICMP TTL manipulation to map the route
 
 > [!note] Security relevance
 > - **ICMP can be blocked** by firewalls — a non-responsive host ≠ host is offline
-> - **Ping sweeps** (nmap -sn) use ICMP to discover live hosts
+> - **Ping sweeps** (`nmap -sn`) use ICMP to discover live hosts
 > - **ICMP tunneling** — data can be hidden inside ICMP packets (exfiltration technique)
 
 ---
@@ -167,7 +144,7 @@ Used to monitor and manage network devices (routers, switches, printers).
 
 > [!warning] Security relevance
 > - SNMPv1/v2c use **community strings** (default: `public`, `private`) as passwords — often unchanged
-> - Can leak **device info, routing tables, running processes** if public community string is accessible
+> - Can leak **device info, routing tables, running processes** if the public community string is accessible
 > - `snmpwalk -c public -v2c target` reveals a lot if misconfigured
 > - SNMPv3 has proper auth/encryption — but older versions are everywhere
 
@@ -195,7 +172,6 @@ enum4linux -a target                  # full SMB enumeration
 Windows remote desktop.
 
 > [!warning] Security relevance
-> - Brute-force target (common + credentials often weak)
+> - Brute-force target (common; credentials often weak)
 > - **BlueKeep (CVE-2019-0708)** — critical pre-auth RCE in older RDP implementations
 > - Exposed RDP on the internet = one of the top ransomware entry points in real incidents
-
