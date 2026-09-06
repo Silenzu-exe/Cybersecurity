@@ -9,8 +9,8 @@ This isn't a polished course archive, it's a working log of what I'm learning, i
 
 ```
 Cyber Security/
-├── 0.0 Roadmap/      # learning roadmap, checklist, and the pentest journey guide
-├── 0. Books/         # reference texts (Black Hat Python, Hacking: The Art of Exploitation,
+├── 0. Roadmap/        # learning roadmap, checklist, and the pentest journey guide
+├── 0. Books/          # reference texts (Black Hat Python, Hacking: The Art of Exploitation,
 │                      #   Linux Basics for Hackers, Web Application Hacker's Handbook)
 ├── 1. Notes/
 │   ├── Foundation/    # how computers work, Linux fundamentals, networking
@@ -20,9 +20,9 @@ Cyber Security/
 │   ├── Python Basic/  # fundamentals practice, topic by topic
 │   ├── Black Hat Python/  # notes and code, kept side by side
 │   └── Extra/         # self experiments and extra code
-├── 3. practice/       # OverTheWire Bandit log, bash scripts
+├── 3. Practice/       # OverTheWire Bandit log, bash scripts
 ├── 4. Assets/         # images used across notes
-├── 5. Home_lab/       # home lab setup guide
+├── 5. Home Lab/       # home lab setup guide
 └── 6. Tools/          # tool notes, cheat sheets, and recon scripts
 ```
 

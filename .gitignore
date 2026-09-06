@@ -1,0 +1,63 @@
+# ── Python ────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+develop-eggs/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+*.egg
+MANIFEST
+
+# ── Virtual environments ─────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# ── Node / generic JS (if you add any tooling) ───────────
+node_modules/
+
+# ── OS junk ──────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ── Editor / IDE ─────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-workspace
+*.sublime-project
+
+# ── Obsidian ─────────────────────────────────────────────
+# Local-only trash (deleted notes before the permanent trash)
+.trash/
+
+# ── Cloned third-party tool repos living inside the vault
+#    (your own notes for these stay; the repos themselves don't) ─
+#    Add a line per cloned project, e.g.:
+#    6.Tools_info/1.Reconn/Sub-Domain_Hunting/Sublist3r/
+
+# ─── OPTIONAL: comment this OUT if you DO want PDFs tracked ──
+# ── Reference PDFs (large / not your own content) ────────
+# Uncomment to stop tracking books & handbooks:
+# *.pdf
